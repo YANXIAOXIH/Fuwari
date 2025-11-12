@@ -1,0 +1,80 @@
+import { config, fields, collection } from '@keystatic/core';
+
+export default config({
+  // 1. 在本地开发时，内容会直接写入本地文件系统。
+  storage: {
+    kind: 'local',
+    //kind: 'github',
+    //repo: '你的GitHub用户名/你的fuwari仓库名',
+  },
+
+
+  // 我们现在定义两个集合，来匹配你的 src/content/ 目录结构
+  collections: {
+    // 1. 第一个集合：文章 (posts)
+    posts: collection({
+      label: '文章',
+      slugField: 'title',
+      // ⭐ 关键: 这个 glob 路径现在可以正确匹配 src/content/posts/ 下的
+      //    - 直接的 .md 文件 (如 draft.md)
+      //    - 子目录下的 index.md 文件 (如 guide/index.md)
+      path: 'src/content/posts/**/index.md',
+      format: 'frontmatter',
+      // schema 保持我们在上一步修正后的版本
+      schema: {
+        title: fields.slug({ name: { label: '文章标题' } }),
+        published: fields.date({
+          label: '发布日期',
+        }),
+        description: fields.text({
+          label: '文章描述',
+          multiline: true,
+        }),
+        image: fields.image({
+          label: '封面图 (可选)',
+          directory: 'src/assets/images/blog',
+          publicPath: '@assets/images/blog/'
+        }),
+        tags: fields.array(
+          fields.text({ label: '标签' }), {
+            label: '标签',
+            itemLabel: props => props.value
+          }
+        ),
+        category: fields.text({ label: '分类' }),
+        draft: fields.checkbox({
+            label: '草稿',
+            description: '勾选此项后，文章将不会被发布。'
+        }),
+        content: fields.document({
+          label: '正文内容',
+          formatting: true,
+          dividers: true,
+          links: true,
+          images: {
+            directory: 'src/assets/images/blog',
+            publicPath: '@assets/images/blog/'
+          },
+        }),
+      },
+    }),
+
+    // 2. ⭐ 新增第二个集合：特殊页面 (spec)
+    spec: collection({
+        label: '特殊页面',
+        slugField: 'title',
+        path: 'src/content/spec/*.md', // 匹配 about.md
+        format: 'frontmatter',
+        schema: {
+            // "关于" 页面比较简单，我们只需要标题和内容
+            title: fields.slug({ name: { label: '页面标题' } }),
+            content: fields.document({
+              label: '页面内容',
+              formatting: true,
+              dividers: true,
+              links: true,
+            }),
+        }
+    })
+  },
+});
