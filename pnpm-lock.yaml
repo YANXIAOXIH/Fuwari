@@ -59,6 +59,9 @@ importers:
       '@iconify/svelte':
         specifier: ^4.2.0
         version: 4.2.0(svelte@5.39.8)
+      '@keystatic/astro':
+        specifier: ^5.0.6
+        version: 5.0.6(@keystatic/core@0.5.48(react-dom@19.2.0(react@19.2.0))(react@19.2.0))(astro@5.15.5(@types/node@24.5.2)(idb-keyval@6.2.2)(jiti@1.21.7)(lightningcss@1.29.3)(rollup@2.79.2)(sass@1.80.4)(stylus@0.64.0)(terser@5.43.1)(typescript@5.9.3)(yaml@2.7.0))(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       '@keystatic/core':
         specifier: ^0.5.48
         version: 0.5.48(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
@@ -1728,6 +1731,14 @@ packages:
     peerDependenciesMeta:
       next:
         optional: true
+
+  '@keystatic/astro@5.0.6':
+    resolution: {integrity: sha512-kUBXkXpE9/JH2fFx0in+tym6YVIDoHgxW9J9WHOJ+uwbpJJcUH6IRqVyutgZr8DO/UDaAhoZc41zcIUyWz0Trw==}
+    peerDependencies:
+      '@keystatic/core': '*'
+      astro: 2 || 3 || 4 || 5
+      react: ^18.2.0 || ^19.0.0
+      react-dom: ^18.2.0 || ^19.0.0
 
   '@keystatic/core@0.5.48':
     resolution: {integrity: sha512-ar4zHMsG+YpQjIj2JT8utvAyyUN57eXTz0ibAr1MPkhTo75vQvgEzVHfBR65RZHJzmEix6iGbUYq3iJwPcVNfQ==}
@@ -5740,6 +5751,9 @@ packages:
   serialize-javascript@4.0.0:
     resolution: {integrity: sha512-GaNA54380uFefWghODBWEGisLZFj00nS5ACs6yHa9nLqlLpVLO8ChDGeKRjZnV4Nh4n0Qi7nhYZD/9fCPzEqkw==}
 
+  set-cookie-parser@2.7.2:
+    resolution: {integrity: sha512-oeM1lpU/UvhTxw+g3cIfxXHyJRc/uidd3yK1P242gzHds0udQBYzs3y8j4gCCW+ZJ7ad0yctld8RYO+bdurlvw==}
+
   set-function-length@1.2.2:
     resolution: {integrity: sha512-pgRc4hJ4/sNjWCSS9AmnS40x3bNMDTknHgL5UaMBTMyJnU90EgWh1Rz+MC9eFu4BuN/UwZjKQuY/1v3rM7HMfg==}
     engines: {node: '>= 0.4'}
@@ -8385,6 +8399,16 @@ snapshots:
       react-dom: 19.2.0(react@19.2.0)
     transitivePeerDependencies:
       - supports-color
+
+  '@keystatic/astro@5.0.6(@keystatic/core@0.5.48(react-dom@19.2.0(react@19.2.0))(react@19.2.0))(astro@5.15.5(@types/node@24.5.2)(idb-keyval@6.2.2)(jiti@1.21.7)(lightningcss@1.29.3)(rollup@2.79.2)(sass@1.80.4)(stylus@0.64.0)(terser@5.43.1)(typescript@5.9.3)(yaml@2.7.0))(react-dom@19.2.0(react@19.2.0))(react@19.2.0)':
+    dependencies:
+      '@babel/runtime': 7.27.6
+      '@keystatic/core': 0.5.48(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
+      '@types/react': 19.2.4
+      astro: 5.15.5(@types/node@24.5.2)(idb-keyval@6.2.2)(jiti@1.21.7)(lightningcss@1.29.3)(rollup@2.79.2)(sass@1.80.4)(stylus@0.64.0)(terser@5.43.1)(typescript@5.9.3)(yaml@2.7.0)
+      react: 19.2.0
+      react-dom: 19.2.0(react@19.2.0)
+      set-cookie-parser: 2.7.2
 
   '@keystatic/core@0.5.48(react-dom@19.2.0(react@19.2.0))(react@19.2.0)':
     dependencies:
@@ -13639,6 +13663,8 @@ snapshots:
   serialize-javascript@4.0.0:
     dependencies:
       randombytes: 2.1.0
+
+  set-cookie-parser@2.7.2: {}
 
   set-function-length@1.2.2:
     dependencies:

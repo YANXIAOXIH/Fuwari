@@ -1,4 +1,6 @@
-import { makePage } from '@keystatic/core/api/generic';
+import { makeAPIRouteHandler } from '@keystatic/astro/api';
 import keystaticConfig from '../../../keystatic.config';
 
-export const all = makePage(keystaticConfig);
+export const ALL = makeAPIRouteHandler({
+  config: keystaticConfig,
+});
