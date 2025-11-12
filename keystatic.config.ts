@@ -8,10 +8,8 @@ export default config({
     //repo: '你的GitHub用户名/你的fuwari仓库名',
   },
 
-
   // 我们现在定义两个集合，来匹配你的 src/content/ 目录结构
   collections: {
-    // 1. 第一个集合：文章 (posts)
     posts: collection({
       label: '文章',
       slugField: 'title',
@@ -20,8 +18,8 @@ export default config({
       //    - 子目录下的 index.md 文件 (如 guide/index.md)
       path: 'src/content/posts/**/index.md',
       format: 'frontmatter',
-      // schema 保持我们在上一步修正后的版本
       schema: {
+        // ... posts 的 schema 保持不变
         title: fields.slug({ name: { label: '文章标题' } }),
         published: fields.date({
           label: '发布日期',
@@ -58,15 +56,13 @@ export default config({
         }),
       },
     }),
-
-    // 2. ⭐ 新增第二个集合：特殊页面 (spec)
+    
     spec: collection({
         label: '特殊页面',
         slugField: 'title',
-        path: 'src/content/spec/*.md', // 匹配 about.md
+        path: 'src/content/spec/*', 
         format: 'frontmatter',
         schema: {
-            // "关于" 页面比较简单，我们只需要标题和内容
             title: fields.slug({ name: { label: '页面标题' } }),
             content: fields.document({
               label: '页面内容',
