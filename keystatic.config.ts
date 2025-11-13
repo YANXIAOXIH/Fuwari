@@ -13,21 +13,14 @@ export default config({
     posts: collection({
       label: '文章',
       slugField: 'title',
-      // ⭐ 关键: 这个 glob 路径现在可以正确匹配 src/content/posts/ 下的
-      //    - 直接的 .md 文件 (如 draft.md)
-      //    - 子目录下的 index.md 文件 (如 guide/index.md)
-      path: 'src/content/posts/**/index.md',
+      // ⭐ 最终修正的路径: 匹配 posts 目录下及其所有子目录下的任何 .md 或 .mdx 文件
+      path: 'src/content/posts/**/*.{md,mdx}',
       format: 'frontmatter',
       schema: {
-        // ... posts 的 schema 保持不变
+        // 这个 schema 已经是正确的，保持不变
         title: fields.slug({ name: { label: '文章标题' } }),
-        published: fields.date({
-          label: '发布日期',
-        }),
-        description: fields.text({
-          label: '文章描述',
-          multiline: true,
-        }),
+        published: fields.date({ label: '发布日期' }),
+        description: fields.text({ label: '文章描述', multiline: true }),
         image: fields.image({
           label: '封面图 (可选)',
           directory: 'src/assets/images/blog',
@@ -47,7 +40,6 @@ export default config({
         content: fields.document({
           label: '正文内容',
           formatting: true,
-          dividers: true,
           links: true,
           images: {
             directory: 'src/assets/images/blog',
