@@ -1,11 +1,7 @@
 {
   "site": {
-    "title": "YAN",
-    "subtitle": "YAN1",
-    "lang": "zh_CN",
     "themeColor": {
-      "hue": 255,
-      "fixed": true
+      "fixed": false
     },
     "banner": {
       "enable": false,
