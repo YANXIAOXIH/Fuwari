@@ -1,0 +1,35 @@
+{
+  "site": {
+    "title": "YAN",
+    "subtitle": "YAN1",
+    "lang": "zh_CN",
+    "themeColor": {
+      "hue": 255,
+      "fixed": true
+    },
+    "banner": {
+      "enable": false,
+      "position": "center",
+      "credit": {
+        "enable": false
+      }
+    },
+    "toc": {
+      "enable": false,
+      "depth": 2
+    },
+    "favicon": []
+  },
+  "navBar": {
+    "links": []
+  },
+  "profile": {
+    "links": []
+  },
+  "license": {
+    "enable": false
+  },
+  "expressiveCode": {
+    "theme": "github-dark"
+  }
+}
