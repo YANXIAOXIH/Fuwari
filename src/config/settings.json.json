@@ -15,7 +15,7 @@
       }
     },
     "toc": {
-      "enable": false,
+      "enable": true,
       "depth": 2
     },
     "favicon": []
@@ -24,6 +24,7 @@
     "links": []
   },
   "profile": {
+    "avatar": "/images/site/profile/avatar.jpg",
     "links": []
   },
   "license": {
