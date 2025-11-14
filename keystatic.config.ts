@@ -108,12 +108,19 @@ export default config({
   collections: {
     posts: collection({
       label: 'Blog Posts',
-      slugField: 'title',
+      //slugField: 'title',
       path: 'src/content/posts/**',
       format: { contentField: 'content' },
       entryLayout: 'content',
       schema: {
         title: fields.text({ label: 'Title', validation: { isRequired: true } }),
+        slug: fields.slug({
+          name: {
+            label: 'Slug (URL)',
+            description: '文章的URL路径，通常根据标题自动生成',
+            from: 'title', 
+          },
+        }),
         published: fields.date({ label: 'Published Date', validation: { isRequired: true } }),
         updated: fields.date({ label: 'Updated Date' }),
         draft: fields.checkbox({ label: 'Draft' }),
