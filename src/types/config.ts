@@ -29,6 +29,9 @@ export type SiteConfig = {
 			text: string;
 			url?: string;
 		};
+		waves?: {
+			enable: boolean;
+		};
 	};
 	toc: {
 		enable: boolean;

@@ -1,0 +1,75 @@
+{
+  "profile": {
+    "avatar": "/images/assets/profile/avatar.jpg",
+    "name": "YAN XIAOXI",
+    "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "links": [
+      {
+        "name": "Twitter",
+        "icon": "fa6-brands:twitter",
+        "url": "https://twitter.com"
+      },
+      {
+        "name": "Bilibili",
+        "icon": "fa6-brands:bilibili",
+        "url": "https://space.bilibili.com/24525719"
+      },
+      {
+        "name": "GitHub",
+        "icon": "fa6-brands:github",
+        "url": "https://github.com/YANXIAOXIH"
+      }
+    ]
+  },
+  "site": {
+    "title": "Fuwari",
+    "subtitle": "Demo",
+    "lang": "zh_CN",
+    "themeColor": {
+      "hue": 250,
+      "fixed": true
+    },
+    "banner": {
+      "enable": true,
+      "position": "center",
+      "waves": {
+        "enable": true
+      },
+      "credit": {
+        "enable": false
+      }
+    },
+    "toc": {
+      "enable": true,
+      "depth": 2
+    },
+    "favicon": []
+  },
+  "navBar": {
+    "links": [
+      {
+        "name": "Home",
+        "url": "/",
+        "external": false
+      },
+      {
+        "name": "Archive",
+        "url": "/archive",
+        "external": false
+      },
+      {
+        "name": "About",
+        "url": "/about",
+        "external": false
+      }
+    ]
+  },
+  "license": {
+    "enable": false,
+    "name": "CC BY-NC-SA 4.0",
+    "url": "https://creativecommons.org/licenses/by-nc-sa/4.0/"
+  },
+  "expressiveCode": {
+    "theme": "night-owl"
+  }
+}

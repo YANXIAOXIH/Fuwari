@@ -6,6 +6,8 @@ import MainGridLayout from "@layouts/MainGridLayout.astro";
 import { getSortedPostsList } from "../utils/content-utils";
 
 const sortedPostsList = await getSortedPostsList();
+
+export const prerender = true; 
 ---
 
 <MainGridLayout title={i18n(I18nKey.archive)}>
