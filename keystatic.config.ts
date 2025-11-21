@@ -132,6 +132,24 @@ const siteSettingsSchema = {
     ),
   }, { label: '站点配置 (Site Config)' }),
 
+ // --- announcement Config 卡片 ---
+  announcement: fields.object({
+    enable: fields.checkbox({ label: '启用公告', defaultValue: true }),
+    title: fields.text({ label: '公告标题', defaultValue: '公告' }),
+    content: fields.text({ 
+        label: '公告内容', 
+        multiline: true
+    }),
+    closable: fields.checkbox({ label: '允许用户关闭', defaultValue: true }),
+    
+    link: fields.object({
+        enable: fields.checkbox({ label: '启用链接按钮', defaultValue: true }),
+        text: fields.text({ label: '按钮文字', defaultValue: '了解更多' }),
+        url: fields.text({ label: '链接地址' }),
+        external: fields.checkbox({ label: '新窗口打开', defaultValue: false }),
+    }, { label: '跳转链接设置' })
+  }, { label: '侧边栏公告 (Announcement)' }),
+
   // --- Navigation Bar 卡片 ---
   navBar: fields.object({
     links: fields.array(

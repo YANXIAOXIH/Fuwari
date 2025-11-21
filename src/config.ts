@@ -25,6 +25,7 @@ export const profileConfig: ProfileConfig = {
 
 export const licenseConfig: LicenseConfig = settings.license;
 export const expressiveCodeConfig: ExpressiveCodeConfig = settings.expressiveCode;
+export const announcementConfig: AnnouncementConfig = settings.announcement ;
 
 export const navBarConfig: NavBarConfig = {
   links: settings.navBar.links.map(link => {

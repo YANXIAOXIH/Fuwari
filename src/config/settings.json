@@ -45,6 +45,18 @@
     },
     "favicon": []
   },
+  "announcement": {
+    "enable": true,
+    "title": "公告",
+    "content": "欢迎来到我的博客！！！",
+    "closable": true,
+    "link": {
+      "enable": true,
+      "text": "了解更多",
+      "url": "/about",
+      "external": false
+    }
+  },
   "navBar": {
     "links": [
       {

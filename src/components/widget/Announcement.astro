@@ -1,0 +1,83 @@
+---
+import { Icon } from "astro-icon/components";
+import { announcementConfig } from "../../config";
+import I18nKey from "../../i18n/i18nKey";
+import { i18n } from "../../i18n/translation";
+import WidgetLayout from "./WidgetLayout.astro";
+
+const config = announcementConfig;
+
+interface Props {
+    class?: string;
+    style?: string;
+}
+const className = Astro.props.class;
+const style = Astro.props.style;
+---
+
+<!-- 如果配置未开启，则不渲染任何内容 -->
+{ config.enable && (
+<WidgetLayout 
+    name={config.title || i18n(I18nKey.announcement)} 
+    id="announcement-widget"
+    class={className} 
+    style={style}
+>
+    <div>
+        <div class="text-neutral-600 dark:text-neutral-300 leading-relaxed mb-3 text-sm">
+            {config.content}
+        </div>
+        
+        <div class="flex items-center justify-between gap-3">
+            <div>
+                {config.link && config.link.enable !== false && (
+                    <a 
+                        href={config.link.url} 
+                        target={config.link.external ? "_blank" : "_self"}
+                        rel={config.link.external ? "noopener noreferrer" : undefined}
+                        class="btn-regular rounded-lg px-3 py-1.5 text-xs font-medium active:scale-95 transition-transform"
+                    >
+                        {config.link.text}
+                    </a>
+                )}
+            </div>
+            
+            {config.closable && (
+                <button 
+                    id="btn-close-announcement"
+                    class="btn-regular rounded-lg h-8 w-8 text-sm hover:bg-red-100 dark:hover:bg-red-900/30 transition-colors flex justify-center items-center"
+                    aria-label={i18n(I18nKey.announcementClose)}
+                >
+                    <Icon name="fa6-solid:xmark" class="text-base" />
+                </button>
+            )}
+        </div>
+    </div>
+</WidgetLayout>
+)}
+
+<script is:inline>
+    // 使用 astro:page-load 确保在页面切换时脚本也能运行
+    document.addEventListener('astro:page-load', () => {
+        const widget = document.getElementById('announcement-widget');
+        const closeBtn = document.getElementById('btn-close-announcement');
+        const STORAGE_KEY = 'announcement-closed';
+
+        // 1. 检查是否已经关闭过
+        if (widget && localStorage.getItem(STORAGE_KEY) === 'true') {
+            widget.style.display = 'none';
+        }
+
+        // 2. 绑定关闭按钮点击事件
+        if (closeBtn && widget) {
+            closeBtn.addEventListener('click', () => {
+                // 添加淡出动画效果（可选，直接隐藏也可以）
+                widget.style.opacity = '0'; 
+                setTimeout(() => {
+                    widget.style.display = 'none';
+                    localStorage.setItem(STORAGE_KEY, 'true');
+                }, 300); // 等待动画结束
+            });
+        }
+    });
+</script>

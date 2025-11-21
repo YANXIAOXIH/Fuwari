@@ -6,6 +6,8 @@ import I18nKey from "../i18n/i18nKey";
 import { i18n } from "../i18n/translation";
 import MainGridLayout from "../layouts/MainGridLayout.astro";
 
+import Comment from '../components/Comment.astro';
+
 const aboutPost = await getEntry("spec", "about");
 
 if (!aboutPost) {
@@ -25,4 +27,9 @@ export const prerender = true;
             </Markdown>
         </div>
     </div>
+
+    <div class="mt-8 w-full rounded-[var(--radius-large)] bg-[var(--card-bg)] p-6 md:p-10">
+        <Comment />
+    </div>
+
 </MainGridLayout>

@@ -58,22 +58,23 @@ const mainPanelTop = siteConfig.banner.enable
     >
     </ImageWrapper>
 
+
     <!-- Water waves effect -->
     {siteConfig.banner.waves?.enable && (
-        //<div class="waves absolute -bottom-[1px] h-[10vh] max-h-[9.375rem] min-h-[3.125rem] w-full md:h-[15vh]" id="header-waves">
-        <div class="waves absolute -bottom-[1px] h-[5vh] max-h-[9.375rem] min-h-[3.125rem] w-full md:h-[10vh]" id="header-waves">
+        <div class="waves absolute -bottom-[1px] w-full pointer-events-none"  style="height: 15vh; min-height: 5rem; max-height: 9rem;">
             <svg
-                class="waves"
+                class="waves w-full h-full"
                 xmlns="http://www.w3.org/2000/svg"
                 xmlns:xlink="http://www.w3.org/1999/xlink"
-                viewBox="0 20 150 30"
+                viewBox="0 24 150 28"
                 preserveAspectRatio="none"
                 shape-rendering="auto"
             >
                 <defs>
                     <path
                         id="gentle-wave"
-                        d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v48h-352z"
+                        d="M-160 44c30 0 58-25 88-25s 58 25 88 25 58-25 88-25 58 25 88 25 v44h-352z"
+                        
                     >
                     </path>
                 </defs>
@@ -82,7 +83,7 @@ const mainPanelTop = siteConfig.banner.enable
                         xlink:href="#gentle-wave"
                         x="48"
                         y="0"
-                        class="opacity-25 fill-[var(--page-bg)]"
+                        class="opacity-30 fill-[var(--page-bg)]"
                         style="animation-delay: -2s; animation-duration: 7s;"
                     ></use>
                     <use
@@ -96,20 +97,21 @@ const mainPanelTop = siteConfig.banner.enable
                         xlink:href="#gentle-wave"
                         x="48"
                         y="5"
-                        class="opacity-75 fill-[var(--page-bg)]"
-                        style="animation-delay: -4s; animation-duration: 15s;"
+                        class="opacity-70 fill-[var(--page-bg)]"
+                        style="animation-delay: -4s; animation-duration: 13s;"
                     ></use>
                     <use
                         xlink:href="#gentle-wave"
                         x="48"
                         y="7"
                         class="fill-[var(--page-bg)]"
-                        style="animation-delay: -5s; animation-duration: 23s;"
+                        style="animation-delay: -5s; animation-duration: 20s;"
                     ></use>
                 </g>
             </svg>
         </div>
     )}
+
 </div>}
 
 <!-- Main content -->

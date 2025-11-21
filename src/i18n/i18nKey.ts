@@ -8,6 +8,9 @@ enum I18nKey {
 	categories = "categories",
 	recentPosts = "recentPosts",
 
+	announcement = "announcement",
+	announcementClose = "announcementClose",
+	
 	comments = "comments",
 
 	untitled = "untitled",
