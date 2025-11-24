@@ -23,7 +23,7 @@
   },
   "site": {
     "title": "Fuwari",
-    "subtitle": "Demo",
+    "subtitle": "Blog",
     "lang": "zh_CN",
     "themeColor": {
       "hue": 250,
@@ -81,6 +81,6 @@
     "url": "https://creativecommons.org/licenses/by-nc-sa/4.0/"
   },
   "expressiveCode": {
-    "theme": "night-owl"
+    "theme": "dracula"
   }
 }
